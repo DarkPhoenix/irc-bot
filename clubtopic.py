@@ -16,8 +16,6 @@ def entropia_club_topic(bot):
       clubstatus = r.json()
       old_topic = bot.channels[channel].topic
 
-#      bot.msg(channel, 'Clubstatus: ' + str(clubstatus['club_offen']))
-
       if clubstatus['club_offen']:
         status = 'offen'
       else:
@@ -27,6 +25,3 @@ def entropia_club_topic(bot):
 
       if old_topic != new_topic:
         bot.write(('TOPIC', channel,), text=new_topic)
-
-#      bot.msg(channel, new_topic)
-
