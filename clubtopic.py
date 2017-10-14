@@ -10,7 +10,7 @@ def entropia_club_topic(bot):
   url = 'http://club.entropia.de/status.json'
 
   if channel in bot.channels:
-    r = requests.get(url)
+    r = requests.get(url, headers=headers)
 
     if r.status_code == requests.codes.ok:
       clubstatus = r.json()
